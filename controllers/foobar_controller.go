@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"api-go-gin/helpers"
 	"api-go-gin/initializers"
 	"api-go-gin/models"
 	"log"
@@ -12,12 +13,18 @@ import (
 
 func CreateFoobar(c *gin.Context) {
 	var foobar models.Foobar
-	err := c.ShouldBindJSON(&foobar)
-	if err != nil {
+	if err := c.ShouldBindJSON(&foobar); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"Error": err.Error(),
 		})
 		log.Panic("Bind To Json Error", err)
+		return
+	}
+	if err := helpers.ModelValidator(&foobar); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"Error": err.Error(),
+		})
+		log.Panic("Data validation with errors", err)
 		return
 	}
 	initializers.DB.Create(&foobar)
@@ -28,8 +35,7 @@ func ShownFoobar(c *gin.Context) {
 	var foobar []models.Foobar
 	//Mock reference removed
 	//c.JSON(200, helpers.MyFoobar)
-	err := initializers.DB.Find(&foobar)
-	if err.Error != nil {
+	if err := initializers.DB.Find(&foobar); err.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
@@ -42,8 +48,7 @@ func ShownFoobar(c *gin.Context) {
 func ShownFoobarByParamId(c *gin.Context) {
 	var foobar models.Foobar
 	id := c.Params.ByName("id")
-	err := initializers.DB.First(&foobar, id)
-	if err.Error != nil {
+	if err := initializers.DB.First(&foobar, id); err.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
@@ -70,6 +75,13 @@ func EditFoobarByParamId(c *gin.Context) {
 		log.Panic("Bind To Json Error", err)
 		return
 	}
+	if err := helpers.ModelValidator(&foobar); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"Error": err.Error(),
+		})
+		log.Panic("Data validation with errors", err)
+		return
+	}
 	initializers.DB.Model(&foobar).Updates(foobar)
 	c.JSON(http.StatusOK, foobar)
 }
@@ -77,8 +89,7 @@ func EditFoobarByParamId(c *gin.Context) {
 func DeleteFoobarByParamId(c *gin.Context) {
 	var foobar models.Foobar
 	id := c.Params.ByName("id")
-	err := initializers.DB.First(&foobar, id)
-	if err.Error != nil {
+	if err := initializers.DB.First(&foobar, id); err.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
@@ -92,8 +103,7 @@ func DeleteFoobarByParamId(c *gin.Context) {
 func ShownFoobarByParamReg(c *gin.Context) {
 	var foobar []models.Foobar
 	reg, _ := strconv.ParseUint(c.Params.ByName("reg"), 10, 64)
-	err := initializers.DB.Where(&models.Foobar{Registration: reg}).Find(&foobar)
-	if err.Error != nil {
+	if err := initializers.DB.Where(&models.Foobar{Registration: reg}).Find(&foobar); err.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
