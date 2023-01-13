@@ -3,8 +3,8 @@ package controllers
 import (
 	"api-go-gin/helpers"
 	"api-go-gin/initializers"
+	"api-go-gin/logs"
 	"api-go-gin/models"
-	"log"
 	"net/http"
 	"strconv"
 
@@ -17,18 +17,19 @@ func CreateFoobar(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"Error": err.Error(),
 		})
-		log.Panic("Bind To Json Error", err)
+		logs.PopulateErrorLogFile("ERROR", err, "Bind To Json Error")
 		return
 	}
 	if err := helpers.ModelValidator(&foobar); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"Error": err.Error(),
 		})
-		log.Panic("Data validation with errors", err)
+		logs.PopulateErrorLogFile("WARNING", err, "Data validation with errors")
 		return
 	}
 	initializers.DB.Create(&foobar)
 	c.JSON(http.StatusOK, foobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }
 
 func ShownFoobar(c *gin.Context) {
@@ -37,10 +38,11 @@ func ShownFoobar(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
-		log.Panic("Find Error", err.Error.Error())
+		logs.PopulateErrorLogFile("ERROR", err.Error, "Find Error")
 		return
 	}
 	c.JSON(http.StatusOK, foobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }
 
 func ShownFoobarByParamId(c *gin.Context) {
@@ -50,10 +52,11 @@ func ShownFoobarByParamId(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
-		log.Panic("Find Error", err.Error.Error())
+		logs.PopulateErrorLogFile("ERROR", err.Error, "Find Error")
 		return
 	}
 	c.JSON(http.StatusOK, foobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }
 
 func EditFoobarByParamId(c *gin.Context) {
@@ -63,25 +66,26 @@ func EditFoobarByParamId(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
-		log.Panic("Find Error", err.Error.Error())
+		logs.PopulateErrorLogFile("ERROR", err.Error, "Find Error")
 		return
 	}
 	if err := c.ShouldBindJSON(&foobar); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"Error": err.Error(),
 		})
-		log.Panic("Bind To Json Error", err)
+		logs.PopulateErrorLogFile("ERROR", err, "Bind To Json Error")
 		return
 	}
 	if err := helpers.ModelValidator(&foobar); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"Error": err.Error(),
 		})
-		log.Panic("Data validation with errors", err)
+		logs.PopulateErrorLogFile("WARNING", err, "Data validation with errors")
 		return
 	}
 	initializers.DB.Model(&foobar).Updates(foobar)
 	c.JSON(http.StatusOK, foobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }
 
 func DeleteFoobarByParamId(c *gin.Context) {
@@ -91,11 +95,12 @@ func DeleteFoobarByParamId(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
-		log.Panic("Find Error", err.Error.Error())
+		logs.PopulateErrorLogFile("ERROR", err.Error, "Find Error")
 		return
 	}
 	initializers.DB.Delete(&foobar, id)
 	c.JSON(http.StatusAccepted, foobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }
 
 func ShownFoobarByParamReg(c *gin.Context) {
@@ -105,13 +110,15 @@ func ShownFoobarByParamReg(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
 		})
-		log.Panic("Find Error", err.Error.Error())
+		logs.PopulateErrorLogFile("ERROR", err.Error, "Find Error")
 		return
 	}
 	c.JSON(http.StatusOK, foobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }
 
 func ShownFoobarMockToLearnTests(c *gin.Context) {
 	//Mock reference
 	c.JSON(200, helpers.MyFoobar)
+	logs.PopulateErrorLogFile("INFO", nil, "Successful call to endpoint: "+""+c.Request.Method+""+c.Request.RequestURI)
 }

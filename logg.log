@@ -1,0 +1,20 @@
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET/api/v1/foobar/mock","time":"2023-01-13T19:05:50-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET/api/v1/foobar/mock","time":"2023-01-13T19:05:54-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET/api/v1/foobar/mock","time":"2023-01-13T19:05:56-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET/api/v1/foobar","time":"2023-01-13T19:06:01-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:06:05-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET/api/v1/foobar/2","time":"2023-01-13T19:06:10-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:06:16-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:06:49-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:07:13-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:07:23-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:07:26-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"error","msg":"Find Error","time":"2023-01-13T19:07:32-03:00","type":"ERROR"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: POST","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: PATCH","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: DELETE","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T19:07:49-03:00","type":"INFO"}
