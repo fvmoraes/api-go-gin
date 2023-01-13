@@ -33,8 +33,6 @@ func CreateFoobar(c *gin.Context) {
 
 func ShownFoobar(c *gin.Context) {
 	var foobar []models.Foobar
-	//Mock reference removed
-	//c.JSON(200, helpers.MyFoobar)
 	if err := initializers.DB.Find(&foobar); err.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Error": err.Error.Error(),
@@ -111,4 +109,9 @@ func ShownFoobarByParamReg(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, foobar)
+}
+
+func ShownFoobarMockToLearnTests(c *gin.Context) {
+	//Mock reference
+	c.JSON(200, helpers.MyFoobar)
 }

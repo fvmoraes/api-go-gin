@@ -14,4 +14,5 @@ func MyFoobarRoutes(r *gin.Engine) {
 	g.PATCH("/foobar/:id", controllers.EditFoobarByParamId)
 	g.DELETE("/foobar/:id", controllers.DeleteFoobarByParamId)
 	g.GET("/foobar/param/:reg", controllers.ShownFoobarByParamReg)
+	g.GET("/foobar/mock", controllers.ShownFoobarMockToLearnTests)
 }
