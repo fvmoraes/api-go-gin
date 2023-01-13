@@ -1,0 +1,250 @@
+_type: export
+__export_format: 4
+__export_date: 2023-01-13T18:24:49.387Z
+__export_source: insomnia.desktop.app:v2022.7.0
+resources:
+  - _id: req_a1b174143ca04cd3bed69e6387141661
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673634132813
+    created: 1673633910138
+    url: "{{ _.baseURL }}/foobar"
+    name: CREATE_FOOBAR
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |+
+        
+        {
+         	"what":"message",
+        	"message":"New personal message",
+        	"registration":5678
+        }
+
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - id: pair_e2e7500a98e84daeab4bc6e9d428b0be
+        name: ""
+        value: ""
+        description: ""
+    authentication: {}
+    metaSortKey: -1671648975153.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    parentId: wrk_c79414a02a5d44aab8bcfae98d6605d7
+    modified: 1673633910135
+    created: 1673633910135
+    name: Foobar (API-GO-GIN)
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1672797742020
+    _type: request_group
+  - _id: wrk_c79414a02a5d44aab8bcfae98d6605d7
+    parentId: null
+    modified: 1673633910126
+    created: 1673633910126
+    name: api-go-gin.json
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_143898d226bd4028810ac36d0a74a5d0
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673633910138
+    created: 1673633910138
+    url: "{{ _.baseURL }}/foobar"
+    name: LIST_FOOBAR
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1671648975103.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e7070d74453f466db5fbf11c1c34c633
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673633910141
+    created: 1673633910141
+    url: "{{ _.baseURL }}/foobar/mock"
+    name: LIST_FOOBAR/MOCK
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1671648975078.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d8240e90f5f84ee0bf32ede7aa6b657d
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673634138820
+    created: 1673633910136
+    url: "{{ _.baseURL }}/foobar/1"
+    name: LIST_FOOBAR_BY_ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671648975053.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_998d95d5d1b14f6eb5d35e4bdef23d39
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673634167429
+    created: 1673633910140
+    url: "{{ _.baseURL }}/foobar/param/5678"
+    name: LIST_FOOBAR/PARAM_BY_REG
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671648975028.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_41de71ccff1c4475933b70b9a8aa4f23
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673634124332
+    created: 1673633910135
+    url: "{{ _.baseURL }}/foobar/1"
+    name: EDIT_FOOBAR
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"registration": 1234
+        	}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1671648975003.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4aee11cafa5e41d79d556e8d15b62f87
+    parentId: fld_ec30f7699ea1458ca5e7a9fcf24e8dbf
+    modified: 1673633910139
+    created: 1673633910139
+    url: "{{ _.baseURL }}/foobar/1"
+    name: DELETE_FOOBAR
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1671648974953.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_8984fff810634684aab418d732ccd7ca
+    parentId: wrk_c79414a02a5d44aab8bcfae98d6605d7
+    modified: 1673633910128
+    created: 1673633910128
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1671648776553
+    _type: environment
+  - _id: jar_bb62fd614c6c4c09bad5132e2cdf02bb
+    parentId: wrk_c79414a02a5d44aab8bcfae98d6605d7
+    modified: 1673633910133
+    created: 1673633910133
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_3a98a995dd054b9cbdc0ec624ea48e8c
+    parentId: wrk_c79414a02a5d44aab8bcfae98d6605d7
+    modified: 1673633910151
+    created: 1673633910134
+    fileName: api-go-gin.json
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: uts_0bb0be458449409095b4ffa3f5bff4d4
+    parentId: wrk_c79414a02a5d44aab8bcfae98d6605d7
+    modified: 1673633910148
+    created: 1673633910148
+    name: Example Test Suite
+    _type: unit_test_suite
+  - _id: env_521972cf1c874161a7c346d7827ed8a0
+    parentId: env_8984fff810634684aab418d732ccd7ca
+    modified: 1673633910131
+    created: 1673633910131
+    name: API-GO-GIN
+    data:
+      baseURL: http://172.33.0.4:9000/api/v1
+    dataPropertyOrder:
+      "&":
+        - baseURL
+    color: "#ff0000"
+    isPrivate: false
+    metaSortKey: 1672797553461
+    _type: environment
