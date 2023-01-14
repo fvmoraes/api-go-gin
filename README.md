@@ -3,8 +3,8 @@
 ---
 ## Structure and technologies used
 ### What purpose?
-> This project's main objective is to learn the Golang programming language and its packages.
-> Initially creating a simple API and augmenting it with logs, tests, and endpoint documentation.
+>The main objective of this project is to learn the Go programming language and explore its packages available in the documentation. Initially, with the creation of a simple API, and later making it more complex, inserting logs, tests and nested endpoint documentation.
+
 ### Technologies used:
 - [Golang](https://go.dev/learn/)
 - [Docker](https://docs.docker.com/get-started/)
