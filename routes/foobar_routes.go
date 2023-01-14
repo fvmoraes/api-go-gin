@@ -4,6 +4,8 @@ import (
 	"api-go-gin/controllers"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func MyFoobarRoutes(r *gin.Engine) {
@@ -15,4 +17,6 @@ func MyFoobarRoutes(r *gin.Engine) {
 	g.DELETE("/foobar/:id", controllers.DeleteFoobarByParamId)
 	g.GET("/foobar/param/:reg", controllers.ShownFoobarByParamReg)
 	g.GET("/foobar/mock", controllers.ShownFoobarMockToLearnTests)
+	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
 }
