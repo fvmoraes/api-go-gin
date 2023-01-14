@@ -16,11 +16,11 @@
 ### Basic informations:
 > This project contains 7 API's endpoints, 6 of which are directly linked with a CRUD process to a postgres database.
 
-> For basic interaction, you can use Swagger (via browser) or Insomnia, importing the yaml that contains the initial for app.
+> For basic interaction, you can use Swagger (via browser) or Insomnia, importing the yaml that contains the initial config to app.
 
 > The postgres database and the pgadmin are already configured, ready for use.
 
-> Some test cases were created that can be started with the ```go test``` command.
+> Some test cases were created that can be started with the command ```go test```.
 
 > The Project has a mirrored structure in an MVC pattern.
 ---
@@ -28,7 +28,9 @@
 ## How to use
 ### What do I need to have installed on my computer?
 > Docker and Docker Compose installed in your machine
+
 > Any Linux operating system or Linux subsystem
+
 - [Docker](https://docs.docker.com/get-started/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
@@ -43,10 +45,10 @@ chmod +x start.sh
 sudo rm -Rf postgres-data && ./start.sh
 ```
 ### How to access the available features?
->The following private addresses are fixed in the Docker compose configuration, and give access to project options:
+>The following private addresses are fixed in the Docker-Compose configuration, and give access to project options:
 
 - ``` http://172.33.0.4:9000/api/v1/ ``` grants access to API and Swagger endpoints.
-- ``` http://172.33.0.3/ ``` grants access to PGAdmin that already has the configuration with the database. Use for login in pgadmin: "admin@foobar.com" and "123456" and for confirmation database access password is "foobar".
+- ``` http://172.33.0.3/ ``` grants access to PGAdmin that already has the configuration with the database. Use for login in pgadmin: "admin@foobar.com" and "123456" and for confirmation to access database, the password is "foobar".
 - ``` 172.33.0.2 ``` is the IP address of the database, accessible with the credentials foobar:foobar:foobar on port 5432.
 ### Example of PGAdmin access:
 > [pgadmin/login](http://172.33.0.3/login)
@@ -70,13 +72,13 @@ go test
 ---
 ## More API information
 ### List of endpoints
-- ```GET http://172.33.0.4:9000/api/v1/foobar/mock``` To Shown Mock
-- ```POST http://172.33.0.4:9000/api/v1/foobar/``` To Create Foobar
-- ```GET http://172.33.0.4:9000/api/v1/foobar/``` To Shown all Foobar
-- ```GET http://172.33.0.4:9000/api/v1/foobar/:id``` To Shown Foobar by ID
-- ```GET http://172.33.0.4:9000/api/v1/foobar/:reg``` To Shown Foobar by Registration
-- ```PATCH http://172.33.0.4:9000/api/v1/foobar/:id``` To Edit Foobar by ID
-- ```DELETE http://172.33.0.4:9000/api/v1/foobar/:id``` To Delete Foobar by ID
+- ```GET http://172.33.0.4:9000/api/v1/foobar/mock``` To shown mock
+- ```POST http://172.33.0.4:9000/api/v1/foobar/``` To create Foobar
+- ```GET http://172.33.0.4:9000/api/v1/foobar/``` To shown all Foobar
+- ```GET http://172.33.0.4:9000/api/v1/foobar/:id``` To shown Foobar by ID
+- ```GET http://172.33.0.4:9000/api/v1/foobar/:reg``` To shown Foobar by Registration
+- ```PATCH http://172.33.0.4:9000/api/v1/foobar/:id``` To edit Foobar by ID
+- ```DELETE http://172.33.0.4:9000/api/v1/foobar/:id``` To delete Foobar by ID
 - ```GET http://172.33.0.4:9000/api/v1/swagger/index.html``` Swagger
 ---
 ---
