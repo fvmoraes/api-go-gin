@@ -16,7 +16,7 @@
 ### Basic informations:
 > This project contains 7 API's endpoints, 6 of which are directly linked with a CRUD process to a postgres database.
 
-> For basic interaction, you can use Swagger (via browser) or Insomnia, importing the yaml that contains the essential config to init the use.
+> For basic interaction, you can use Swagger (via browser) or Insomnia (importing the yaml that contains the essential config to init the use).
 
 > The postgres database and the pgadmin are already configured, ready for use.
 
