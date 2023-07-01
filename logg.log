@@ -34,3 +34,11 @@
 {"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: DELETE","time":"2023-01-13T23:36:22-03:00","type":"INFO"}
 {"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T23:36:22-03:00","type":"INFO"}
 {"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-01-13T23:36:22-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: POST","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: PATCH","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: DELETE","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
+{"env":"dev","layer":"log","level":"info","msg":"Successful call to endpoint: GET","time":"2023-07-01T02:45:13-03:00","type":"INFO"}
